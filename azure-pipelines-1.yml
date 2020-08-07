@@ -62,15 +62,15 @@ stages:
       artifact: drop
 
 - script: |
-    pip install setup
-    pip install -r $(projectRoot)/requirements.txt
-    pip install pytest
-    pytest Tests/unit_tests --junitxml=$(System.DefaultWorkingDirectory)/TestResults/test-results-unit.xml
-    pip install pycmd
-    py.cleanup Tests/
+   pip install setup
+   pip install -r $(projectRoot)/requirements.txt
+   pip install pytest
+   pytest Tests/unit_tests --junitxml=$(System.DefaultWorkingDirectory)/TestResults/test-results-unit.xml
+   pip install pycmd
+   py.cleanup Tests/
   displayName: 'Run unit tests'
   
-  - task: PublishTestResults@2
+- task: PublishTestResults@2
   inputs:        
     searchFolder: $(System.DefaultWorkingDirectory)
     testResultsFiles: '**/test-*.xml'
