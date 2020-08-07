@@ -60,7 +60,6 @@ stages:
     - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
       displayName: 'Upload package'
       artifact: drop
-
 - script: |
    pip install setup
    pip install -r $(projectRoot)/requirements.txt
