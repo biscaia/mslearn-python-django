@@ -69,7 +69,6 @@ stages:
     pip install pycmd
     py.cleanup Tests/
     displayName: 'Run unit tests'
-  
 - task: PublishTestResults@2
   inputs:        
     searchFolder: $(System.DefaultWorkingDirectory)
